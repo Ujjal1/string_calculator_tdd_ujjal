@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative 'string_calculator'
+
 RSpec.describe StringCalculator do
   describe '.add' do
     it 'returns 0 for an empty string' do
@@ -7,11 +8,15 @@ RSpec.describe StringCalculator do
     end
 
     it 'returns the number for a single number' do
-        expect(StringCalculator.add('1')).to eq(1)
-        expect(StringCalculator.add('5')).to eq(5)
-      end
-      it 'returns the sum of two numbers' do
-        expect(StringCalculator.add('1,5')).to eq(6)
-      end
+      expect(StringCalculator.add('1')).to eq(1)
+      expect(StringCalculator.add('5')).to eq(5)
+    end
+    it 'returns the sum of two numbers' do
+      expect(StringCalculator.add('1,5')).to eq(6)
+    end
+
+    it 'returns the sum of multiple numbers' do
+      expect(StringCalculator.add('1,2,3,4')).to eq(10)
+    end
   end
 end
